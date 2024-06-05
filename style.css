@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+}
+
+.header {
+  background: #10101de5;
+  opacity: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding: 0 40px 0 40px;
+  position: fixed;
+  box-sizing: border-box;
+  width: 100vw;
+}
+
+.headerLinks {
+  display: flex;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 13px;
+}
+.headerLinks1 {
+  color: #43abf0;
+  text-decoration: none;
+}
+.headerLinks2 {
+  text-decoration: none;
+  color: #ffffff;
+}
+.headerLinks3 {
+  text-decoration: none;
+  color: #ffffff;
+}
+.headerLinks4 {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.main {
+  padding: 200px 40px 200px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 75px;
+  background-image: url("./public/background.png");
+  background-position: center;
+}
+.mainLogo {
+  width: 750px;
+}
+.mainBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mainBoxTitle {
+  font-weight: 700;
+  font-size: 20px;
+  color: #000000;
+}
+.mainBoxList {
+  font-weight: 400px;
+  font-size: 20px;
+  color: #000000;
+}
+.mainButtons {
+  display: flex;
+  gap: 10px;
+}
+.mainButtons1 {
+  width: 183px;
+  height: 43px;
+  border: none;
+  border-radius: 4px;
+  background: #3e9cdc;
+  font-size: 13px;
+}
+.mainButtons2 {
+  width: 183px;
+  height: 43px;
+  border: 1px solid #6f6d7b;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #000000;
+  font-size: 13px;
+}
