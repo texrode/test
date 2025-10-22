@@ -1,0 +1,71 @@
+@use "../../utils/vars" as *;
+
+.button {
+  padding: 14px 18px;
+  border-radius: 30px;
+  background-color: $blue;
+  border: none;
+  color: #ffffff;
+  font-size: 18.5px;
+  font-weight: 500;
+  display: flex;
+  width: max-content;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+
+  &:hover{
+    background-color: $darkerBlue;
+  }
+
+  &:active{
+    background-color: $darkerBlue;
+  }
+}
+
+.content{
+  display: flex;
+  width: max-content;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.secondary {
+  background-color: $darkBlue;
+
+  .loader {
+    border-top-color: $darkBlue;
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.hidden{
+  visibility: hidden;
+}
+
+.loader {
+  border: 2px solid $whiteText; 
+  border-top: 2px solid $blue;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  animation: spin 1s linear infinite;
+}
+
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,152 @@
+@use "../../shared/utils/vars" as *;
+@use "../../shared/utils/mixins" as *;
+
+.section {
+  height: 700px;
+  position: relative;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  overflow: hidden;
+
+  @include breakPointTo(tablet) {
+    height: 800px;
+  }
+
+  @include breakPointTo(mobile) {
+    height: 670px;
+  }
+
+  .bgVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 773px;
+
+    @include breakPointTo(mobile) {
+      height: 461px;
+    }
+  }
+
+  .title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+    color: $blue;
+    margin-top: 60px;
+    margin-left: 40px;
+    position: relative;
+
+    @include breakPointTo(tablet) {
+      margin-top: 40px;
+      margin-left: 20px;
+    }
+
+    @include breakPointTo(mobile) {
+      margin-top: 20px;
+    }
+  }
+
+  .advantages {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    overflow-x: auto;
+    padding-left: calc(100vw - 40px);
+    scrollbar-width: none;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      min-width: calc(100vw - 40px);
+      height: 1px;
+      flex-shrink: 0;
+    }
+
+    @include breakPointTo(tablet) {
+      padding-left: calc(100vw - 20px);
+
+      &::after {
+        min-width: calc(100vw - 20px);
+      }
+    }
+  }
+
+  .bottom {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    position: relative;
+
+    @include breakPointTo(tablet) {
+      margin-bottom: 20px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    @include breakPointTo(mobile) {
+      flex-direction: column;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .text {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 120%;
+      letter-spacing: -0.02em;
+      color: white;
+      width: 215px;
+
+      @include breakPointTo(mobile) {
+        width: 100%;
+      }
+    }
+
+    .block {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      @include breakPointTo(mobile) {
+        width: 100%;
+      }
+
+      .border {
+        height: 15px;
+        width: 15px;
+        border: 1px solid #ffffff66;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        .circle {
+          width: 3px;
+          height: 3px;
+          background-color: #ffffffcc;
+          border-radius: 100%;
+        }
+      }
+
+      .line {
+        height: 1px;
+        width: 233px;
+        border-radius: 100%;
+        background-color: #ffffff66;
+
+        @include breakPointTo(mobile) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

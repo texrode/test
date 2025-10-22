@@ -1,0 +1,47 @@
+@use "../../shared/utils/mixins" as *;
+@use "../../shared/utils/vars" as *;
+
+.wrapper {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 9999;
+
+  @include breakPointTo(tablet) {
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.container {
+  background: #9e9e9e99;
+  backdrop-filter: blur(40px);
+  max-width: 463px;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include breakPointTo(tablet) {
+    max-width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+}
+
+.text {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+
+  @include breakPointTo(tablet) {
+    font-size: 10px;
+  }
+}
+
+.link {
+  color: $blue;
+  font-weight: 500;
+}

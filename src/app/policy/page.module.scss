@@ -1,0 +1,48 @@
+@use "../../shared/utils/vars" as *;
+
+.policy {
+  padding: 36px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(27px, 2.5vw, 36px);
+
+  h2 {
+    color: $blackTitle;
+    font-size: clamp(22.5px, 2.08vw, 30px);
+    font-weight: 700;
+    line-height: clamp(27px, 2.5vw, 36px);
+    letter-spacing: -0.6px;
+  }
+  
+  li {
+    color: $blackText;
+    color: #000;
+    font-size: clamp(18px, 1.7vw, 24px);
+    font-weight: 500;
+    line-height: clamp(27px, 2.5vw, 36px);
+    letter-spacing: -0.6px;
+    text-indent: 16px;
+  }
+}
+
+.policySection{
+  display: flex;
+  flex-direction: column;
+  gap: clamp(27px, 2.5vw, 36px);
+}
+
+.title{
+  color: $blackTitle;
+  font-size: clamp(32px, 4.4vw, 64px);
+  font-weight: 500;
+  line-height: clamp(39px, 5.4vw, 78px);
+  letter-spacing: -0.6px;
+  padding: clamp(22.25px, 3.09vw, 44.5px) clamp(16.15px, 2.24vw, 32.3px) clamp(17.5px, 2.46vw, 35.5px) clamp(16.15px, 2.24vw, 32.3px);
+  margin: 0;
+}
+
+.divider{
+  border-top: $sideBarBorder;
+  height: 1px;
+  width: 100%;
+}

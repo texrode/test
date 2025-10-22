@@ -1,0 +1,170 @@
+@use "../../shared/utils/vars" as *;
+@use "../../shared/utils/mixins" as *;
+
+.section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 75px;
+  padding: 35px;
+  padding-right: 0px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: $sideBarBorder;
+
+  @include breakPointTo(tablet) {
+    padding: 20px;
+    gap: 24px;
+    padding-left: 0px;
+    padding-right: 0px;
+    flex-direction: column;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(13px, 2.43vw, 35px);
+
+  @include breakPointTo(tablet) {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+}
+
+.titleCount {
+  color: $blue;
+  margin-right: 31px;
+}
+
+.title {
+  color: $blackText;
+  display: flex;
+  flex-direction: row;
+  font-size: clamp(30px, 4.17vw, 60px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.6px;
+
+  @include breakPointTo(tablet) {
+    flex-direction: column;
+    line-height: 1.5;
+  }
+}
+
+.descp {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+}
+
+.descp.secondary {
+  margin-bottom: 353px;
+  max-width: 612px;
+
+  @include breakPointTo(tablet) {
+    margin-bottom: 0px;
+  }
+}
+
+.mainDescp,
+.secondDescp {
+  color: #000;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: -0.2px;
+}
+
+.secondDescp {
+  color: $grayText;
+}
+
+.specialText {
+  color: $blue;
+}
+
+.imgPhone {
+  height: auto;
+  margin-left: auto;
+  transition: all 0.6s ease-in-out;
+  opacity: 0;
+  transform: translateX(120);
+
+  @include breakPointTo(tablet) {
+    width: 100%;
+    max-width: 390px;
+    padding-left: 18px;
+  }
+
+  &.visible {
+    transition-delay: 0.3s;
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.bottomImg {
+  position: absolute;
+  bottom: -284px;
+  left: -215px;
+  width: 998px;
+  height: 642px;
+  object-fit: contain;
+  opacity: 0;
+  transform: translateY(100);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+  @include breakPointTo(tablet) {
+    display: none;
+  }
+}
+
+.bottomImg.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.bottomImg.papos {
+  width: 720px;
+  height: 449px;
+  left: -70px;
+  bottom: -120px;
+}
+
+.rigthImg {
+  height: 678px;
+  width: 1086px;
+  position: absolute;
+  right: -680px;
+  top: 0px;
+  object-fit: cover;
+  transform: rotate(-60deg) translateX(100px);
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+  @include breakPointTo(tablet) {
+    display: none;
+  }
+}
+
+.rigthImg.visible {
+  transform: rotate(-32deg) translateX(0);
+  opacity: 1;
+  transition-delay: 0.5s;
+}
+
+.swiperSlide {
+  width: 301px;
+}
+
+.swiper {
+  display: none !important;
+  padding-left: 160px;
+
+  @include breakPointTo(tablet) {
+    display: block !important;
+  }
+}

@@ -1,0 +1,231 @@
+@use "../../shared/utils/vars" as *;
+@use "../../shared/utils/mixins" as *;
+
+.sideBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  left: 0;
+  background-color: $background;
+  z-index: 20;
+  height: 100vh;
+  border-right: $sideBarBorder;
+  width: 250px;
+  position: fixed;
+  transition: 0.5s;
+
+  @include breakPointTo(tablet) {
+    justify-content: start;
+    top: 0;
+    height: max-content;
+    max-height: 47px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .top {
+    width: 100%;
+
+    .logo {
+      padding: 22px 32px;
+
+      .open {
+        display: none;
+      }
+
+      @include breakPointTo(tablet) {
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .tools {
+          width: 50px;
+          height: 15px;
+        }
+
+        .open {
+          transition: 0.3s;
+          display: block;
+          font-size: 13px;
+          font-weight: 600;
+          line-height: 17px;
+        }
+      }
+    }
+
+    .tabs {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 22px 0;
+      border-top: $sideBarBorder;
+      border-bottom: $sideBarBorder;
+      padding: 22px 32px;
+
+      @include breakPointTo(tablet) {
+        border-top: none;
+        padding: 15px;
+      }
+
+      .tab {
+        all: unset;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background-color: inherit;
+        border: none;
+        cursor: pointer;
+        width: max-content;
+        transition: 0.3s;
+        transform-origin: center;
+        will-change: transform;
+        width: 100%;
+
+        .text {
+          font-size: 15px;
+          font-weight: 700;
+          line-height: 18px;
+
+          @include breakPointTo(tablet) {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+          }
+        }
+
+        .index {
+          font-size: 10px;
+          font-weight: 500;
+          line-height: 12px;
+          color: $grayText;
+        }
+      }
+      .tab:hover {
+        transform: scale(1.03);
+      }
+    }
+
+    .contacts {
+      padding: 22px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: max-content;
+
+      @include breakPointTo(tablet) {
+        padding: 15px;
+      }
+
+      .contactUs {
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 18px;
+        color: $grayText;
+        transition: 0.3s;
+        cursor: pointer;
+      }
+
+      .contactUs:hover {
+        color: $blue;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-skip-ink: auto;
+        text-decoration-thickness: auto;
+        text-underline-offset: auto;
+        text-underline-position: from-font;
+      }
+
+      .links {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        a {
+          display: flex;
+        }
+
+        .figma,
+        .tg,
+        .workspace {
+          transition: 0.3s;
+          path {
+            transition: 0.3s;
+          }
+        }
+        .figma:hover,
+        .tg:hover,
+        .workspace:hover {
+          path {
+            fill: $blue;
+          }
+        }
+      }
+
+      .workspace {
+        transition: 0.3s;
+        path {
+          transition: 0.3s;
+        }
+      }
+
+      .workspace:hover {
+        path {
+          fill: $blue;
+        }
+      }
+    }
+  }
+
+  .bottom {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 16px;
+    padding: 22px 32px;
+
+    @include breakPointTo(tablet) {
+      padding: 15px;
+    }
+
+    .description {
+      max-width: 190px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 22px;
+      color: $darkBlueTitle;
+      cursor: default;
+
+      @include breakPointTo(tablet) {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .bottom:hover {
+    .fat {
+      color: $blue;
+      path {
+        fill: $blue;
+      }
+    }
+  }
+}
+
+.fat {
+  font-weight: 700;
+  transition: 0.3s;
+  path {
+    transition: 0.3s;
+  }
+}
+
+.blue {
+  color: $blue;
+}
+
+@include breakPointTo(tablet) {
+  .openBar {
+    min-height: 100vh;
+  }
+}

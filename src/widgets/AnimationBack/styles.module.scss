@@ -1,0 +1,57 @@
+@use "../../shared/utils/mixins" as *;
+
+.container {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+
+  min-height: clamp(222px, 37.5vw, 540px);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include breakPointTo(tablet) {
+    margin-top: 47px;
+  }
+}
+
+.image_bg {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.title {
+    &::after {
+      font-weight: 400;
+      opacity: 1;
+      animation: blink 0.7s infinite;
+    }
+
+    span {
+      font-weight: 800;
+      color: white;
+      font-size: clamp(20px, 9.7vw, 140px);
+      line-height: 1.228;
+      letter-spacing: clamp(-8.3px, -0.58vw, -2.72px);
+    }
+
+    span:first-child {
+      margin-right: 20px;
+    }
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }

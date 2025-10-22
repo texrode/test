@@ -1,0 +1,49 @@
+@use "../../utils/vars" as *;
+
+.container {
+  width: 100%;
+  position: relative;
+  height: 54px;
+}
+
+.icon{
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  align-items: center;
+  border-radius: $main-radius;
+  background-color: $grayBackground;
+  height: calc(100% - 17.6px);
+  top: 50%;
+  left: 8.8px;
+  transform: translate(0%, -50%);
+  position: absolute;
+}
+
+.input{
+  border-radius: $main-radius;
+  border: $border;
+  width: 100%;
+  height: 100%;
+  font-size: 13px;
+  line-height: 100%;
+  padding-left: 60px;
+  letter-spacing: -1.5%;
+  outline: none;
+  color: $blackText;
+  transition: all 0.5s ease;
+
+  &::placeholder{
+    color: $blackText;
+  }
+
+  &:focus{
+    border: $activeBorder;
+  }
+}
+
+
+.fullWidth {
+  width: 100%;
+}

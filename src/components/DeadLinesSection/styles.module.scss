@@ -1,0 +1,135 @@
+@use "../../shared/utils/vars" as *;
+@use "../../shared/utils/mixins" as *;
+
+.section{
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: stretch;
+  justify-content: space-between;
+  border-bottom: $sideBarBorder;
+  position: relative;
+
+  @include breakPointTo(tablet){
+    flex-direction: column;
+  }
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  padding: 40px 0px;
+  gap: 171px;
+  width: 100%;
+  padding-left: 35px;
+  justify-content: space-between;
+
+  @include breakPointTo(tablet){
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-bottom: 19px;
+    gap: 27px;
+  }
+}
+
+.containerDeadLine{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: clamp(20px, 2.3vw, 33px);
+  
+  @include breakPointTo(tablet){
+    flex-direction: column-reverse;
+  }
+}
+
+.deadlineList{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  flex: 1,
+}
+
+.deadlineItem{
+  padding-bottom: 18px;
+  width: 100%;
+  border-bottom: 0.77px solid rgba(66, 66, 66, 0.25);
+}
+
+.title{
+  color: $blackText;
+  display: flex;
+  flex-direction: row;
+  font-size: clamp(30px, 4.17vw, 60px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.6px;
+  
+  @include breakPointTo(tablet){
+    flex-direction: column;
+    line-height: 1.5;
+  }
+}
+
+.titleCount{
+  color: $blue;
+  margin-right: 31px;
+}
+
+
+.deadlineItemTitle, .deadlineItemSubtitle{
+  color: $grayText;
+  font-size: clamp(15px, 1.39vw, 20px);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.44px;
+}
+
+.deadlineItemSubtitle{
+  color: #344054;
+  margin-left: 18.45px;
+}
+
+.carusel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.06);
+  width: 460px;
+
+  @include breakPointTo(tablet){
+    width: 100%;
+    height: 526px;
+  }
+}
+
+.img{
+  position: absolute;
+  top: 95px;
+  right: -360px;
+  width: 768px !important;
+  height: 480px !important;
+  min-width: 768px !important;
+  z-index: 3;
+  
+  @include breakPointTo(tablet){
+    top: 20px;
+    min-width: 744px !important;
+    width: 744px !important;
+    height: 484px !important;
+    bottom: 0;
+    right: -400px;
+  }
+}
+
+.containerImg{
+  max-width: 461px;
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.06);
+
+  @include breakPointTo(tablet){
+    min-width: 100%;
+    height: 526px;
+    position: relative;
+  }
+}

@@ -1,0 +1,144 @@
+@use "../../shared/utils/vars" as *;
+@use "../../shared/utils/mixins" as *;
+
+.section {
+  height: 800px;
+  background-color: $mainBlack;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
+  position: sticky;
+  top: 0;
+
+  @include breakPointTo(tablet) {
+    padding: 40px 20px;
+  }
+
+  .top {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include breakPointTo(tablet) {
+      gap: 24px;
+    }
+
+    @include breakPointTo(mobile) {
+      gap: 40px;
+    }
+
+    .about {
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: -0.02em;
+      line-height: 100%;
+      color: $blue;
+    }
+
+    .text {
+      font-weight: 300;
+      font-size: 36px;
+      line-height: 120%;
+      letter-spacing: -0.02em;
+      color: $mainGray;
+      max-width: 1245px;
+
+      @include breakPointTo(tablet) {
+        font-size: 20px;
+      }
+
+      @include breakPointTo(mobile) {
+        font-size: 20px;
+      }
+    }
+  }
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    @include breakPointTo(tablet) {
+      flex-direction: column;
+      align-items: start;
+      gap: 32px;
+    }
+
+    .results {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      max-width: 100%;
+
+      @include breakPointTo(tablet) {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+
+        .img {
+          width: 80px;
+          height: 80px;
+          @include breakPointTo(tablet) {
+            width: 60px;
+            height: 60px;
+          }
+        }
+
+        .info {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+
+          .place {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 120%;
+            letter-spacing: -0.02em;
+            color: white;
+            @include breakPointTo(tablet) {
+              font-size: 14px;
+            }
+          }
+
+          .where {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 120%;
+            letter-spacing: -0.02em;
+            color: $mainGray;
+            width: 176px;
+            @include breakPointTo(tablet) {
+              font-size: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.swiper {
+  width: 482px;
+  height: 307px;
+  margin: 0 !important;
+
+  @include breakPointTo(tablet) {
+    width: 100%;
+    height: 360px;
+  }
+
+  @include breakPointTo(mobile) {
+    width: 100%;
+    height: 304px;
+  }
+
+  .slide {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}

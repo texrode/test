@@ -1,0 +1,90 @@
+@use "../../shared/utils/vars" as *;
+@use "../../shared/utils/mixins" as *;
+
+.section {
+  padding: 20px 40px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: #f9f7f2;
+  @include breakPointTo(tablet) {
+    padding: 20px;
+    justify-content: end;
+  }
+
+  .bgVideo {
+    position: absolute;
+    height: 549px;
+    background-color: inherit;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+
+    @include breakPointTo(tablet) {
+      height: 406px;
+      top: 103px;
+      transform: translateX(-50%);
+    }
+    @include breakPointTo(mobile) {
+      height: 460px;
+      top: 178px;
+      right: -120px;
+      left: auto;
+      transform: none;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    z-index: 1;
+    width: 100%;
+
+    @include breakPointTo(mobile) {
+      flex-direction: column;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .left {
+      display: flex;
+      flex-direction: column;
+
+      .hello {
+        font-weight: 500;
+        font-size: 16px;
+        letter-spacing: -0.02em;
+        color: $mainGray;
+      }
+      .we {
+        font-family: $second-font;
+        font-weight: 400;
+        font-size: 128px;
+        line-height: 90%;
+        color: $blue;
+      }
+    }
+    .right {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      .info {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 120%;
+        letter-spacing: -0.02em;
+        color: $mainGray;
+        width: 325px;
+      }
+
+      .btn {
+        width: max-content;
+      }
+    }
+  }
+}

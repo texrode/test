@@ -1,0 +1,282 @@
+@use "../../shared/utils/vars" as *;
+@use "../../shared/utils/mixins" as *;
+
+.section {
+  border-bottom: 1px solid #e6e6e6;
+
+  .container {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+
+    min-height: clamp(222px, 37.5vw, 540px);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include breakPointTo(tablet) {
+      margin-top: 47px;
+    }
+  }
+
+  .image_bg {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .title {
+    &::after {
+      font-weight: 400;
+      opacity: 1;
+      animation: blink 0.7s infinite;
+    }
+
+    span {
+      font-weight: 800;
+      color: white;
+      font-size: clamp(20px, 9.7vw, 140px);
+      line-height: 1.228;
+      letter-spacing: clamp(-8.3px, -0.58vw, -2.72px);
+    }
+
+    span:first-child {
+      margin-right: 20px;
+    }
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .content__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 0px clamp(16px, 2.8vw, 40px);
+    margin-top: clamp(16px, 2.55833333333vw, 45px);
+    flex-wrap: wrap;
+    position: relative;
+    min-height: 370px;
+    overflow: hidden;
+    padding: 0 clamp(16px, 2.08vw, 30px);
+
+    @include breakPointTo(tablet) {
+      padding-bottom: 16px;
+      gap: 16px clamp(16px, 2.8vw, 40px);
+      flex-direction: column;
+      padding-top: 26px;
+      margin-top: 0px;
+    }
+  }
+
+  .content__wrapper.serebr{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 27px;
+    min-height: 310px;
+
+    @include breakPointTo(tablet) {
+      gap: clamp(16px, 2.8vw, 40px);
+      padding-bottom: 16px;
+    }
+  }
+
+  .image__block {
+    width: max-content;
+    height: max-content;
+
+    @include breakPointTo(tablet) {
+      width: 100%;
+    }
+  }
+
+  .stroke__one,
+  .stroke__two {
+    font-weight: 600;
+    font-size: clamp(63px, 6.7vw, 96px);
+    line-height: 1.07;
+  }
+
+  .stroke__one{
+    word-break: break-word;
+
+    @include breakPointTo(tablet) {
+      width: 80%;
+    }
+  }
+
+  .stroke__two {
+    color: $blue;
+  }
+
+  .img__figures {
+    transform: rotate(45deg);
+    position: absolute;
+    bottom: 0;
+    left: -61px;
+    bottom: -20px;
+    z-index: -1;
+    max-width: none;
+    width: 300px;
+    height: 250px;
+
+    @include breakPointTo(tablet) {
+      transform: rotate(50deg);
+      top: -90px;
+      right: -170px;
+      left: auto;
+    }
+  }
+
+  .img__figures.serebr{
+    bottom: -100px;
+  }
+
+  .text__block {
+    max-width: clamp(364px, 39.1vw, 728px);
+    width: 100%;
+    
+    @include breakPointTo(tablet) {
+      padding-bottom: 44px;
+      max-width: 100%;
+    }
+  }
+
+  .text__block.serebr {
+    max-width: 100%;
+  }
+
+  .text {
+    color: $grayText;
+    font-size: clamp(16px, 1.25vw, 18px);
+    line-height: 1.5;
+    font-weight: 500;
+    letter-spacing: clamp(-0.18px, 0.0125vw, -0.16px);
+    min-height: 119px;
+    display: flex;
+    align-items: center;
+
+    @include breakPointTo(tablet){
+      padding-bottom: 27px;
+    }
+  }
+
+  .text.serebr{
+    min-height: auto;
+  }
+
+  .buttons__wrapper {
+    position: relative;
+    display: flex;
+    gap: 8px;
+    background-color: #f2f2f2;
+    width: max-content;
+    height: clamp(71.8px, 5vw, 71.5px);
+    border-radius: 43px;
+    margin-top: 24px;
+    padding: 8px;
+    border: #ebebeb solid 1.75px;
+    transition: all 0.3s ease;
+
+    @include breakPointTo(tablet) {
+      padding: 8.5px;
+    }
+
+    &.transparentBg {
+      background-color: transparent;
+    }
+
+    &.blueBg {
+      background-color: $blue;
+      border: $blue solid 1.75px;
+
+    }
+  }
+
+  .buttons__wrapper.serebr{
+    margin-top: 0;
+    margin-left: auto;
+
+    @include breakPointTo(tablet) {
+      margin-left: 0px;
+    }
+  }
+
+  .button__case {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    height: 100%;
+    border-radius: 52px;
+    background-color: transparent;
+    border: none;
+    letter-spacing: -0.015em;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 100%;
+    padding: 0px 17.48px;
+    cursor: pointer;
+
+    @include breakPointTo(tablet) {
+      padding: 0px 17.48px;
+      font-size: 20px;
+    }
+  }
+
+  .button__case {
+    background-color: white;
+    border: 0.5px solid #d0d5dd;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+
+    &:hover {
+      background-color: $blue;
+      color: white;
+      border-color: $blue;
+
+      .buttonCaseSvg {
+        color: $whiteText;
+      }
+    }
+  }
+
+  .buttonCaseSvg {
+    color: $blue;
+    width: clamp(28.3px, 2.54vw, 36.5px);
+  }
+
+  .vector {
+    position: absolute;
+    left: -45px;
+    bottom: -30px;
+    width: 53.4px;
+    height: 55.3px;
+
+    @include breakPointTo(tablet) {
+      width: 41.3px;
+      height: 42.8px;
+      left: auto;
+      right: -30px;
+      bottom: -30px;
+      transform: rotate(-95deg);
+    }
+  }
+}

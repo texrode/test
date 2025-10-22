@@ -1,0 +1,91 @@
+@use "../../shared/utils/vars" as *;
+@use '../../shared/utils/mixins' as *;
+
+.section{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 35px;
+  padding-right: 93.7px;
+  border-bottom: $sideBarBorder;
+
+  @include breakPointTo(tablet){
+    padding: 18px;
+  }
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  @include breakPointTo(tablet){
+    gap: 10px;
+  }
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24px;
+  gap: 6px;
+  margin-top: 8px;
+
+  @include breakPointTo(tablet){
+    margin-top: 7px;
+  }
+}
+
+.btn.secondary{
+  background-color: $greenBackground;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  gap: 6.5px;
+}
+
+.descp{
+  color: $grayText;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.44;
+  letter-spacing: -0.72px;
+
+  @include breakPointTo(tablet){
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+  }
+}
+
+.titleCount{
+  color: $blue;
+  margin-right: 31px;
+}
+
+.title{
+  color: $blackText;
+  display: flex;
+  flex-direction: row;
+  font-size: clamp(30px, 4.17vw, 60px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.6px;
+
+  @include breakPointTo(tablet){
+    flex-direction: column;
+    line-height: 1.5;
+  }
+}
+
+.img{
+  width: clamp(158px, 18vw, 259px);
+  height: clamp(158px, 18vw, 259px);
+
+  @include breakPointTo(tablet){
+    margin-top: 4px;
+  }
+}

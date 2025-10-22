@@ -1,0 +1,50 @@
+@use "../../shared/utils/vars" as *;
+@use "../../shared/utils/mixins" as *;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+
+  @include breakPointTo(tablet) {
+    gap: 40px;
+  }
+  @include breakPointTo(mobile) {
+    gap: 32px;
+  }
+
+  .title {
+    font-weight: 500;
+    font-family: 12px;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+    color: $blue;
+    padding-top: 40px;
+    padding-left: 40px;
+    @include breakPointTo(tablet) {
+      padding-left: 20px;
+    }
+  }
+
+  .partners {
+    display: flex;
+    align-items: center;
+    gap: 160px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    @include breakPointTo(tablet) {
+      gap: 80px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    @include breakPointTo(mobile) {
+      gap: 60px;
+    }
+  }
+}

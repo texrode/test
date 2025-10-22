@@ -1,0 +1,38 @@
+@use "../../utils/vars" as *;
+.btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  background-color: $blue;
+  overflow: hidden;
+  width: max-content;
+  transition: 0.2s ease-in-out;
+
+  &:active {
+    background-color: #007affcc;
+  }
+
+  .text {
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -4%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    line-height: 100%;
+    height: 14px;
+    .s1,
+    .s2 {
+      transition: 0.3s;
+    }
+  }
+
+  &:hover {
+    .text {
+      .s1,
+      .s2 {
+        transform: translateY(-24px);
+      }
+    }
+  }
+}

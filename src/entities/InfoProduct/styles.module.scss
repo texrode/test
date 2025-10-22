@@ -1,0 +1,47 @@
+@use "../../shared/utils/mixins" as *;
+
+.info {
+  background-color: #f2f2f2;
+  padding: 28px 30px;
+
+  @include breakPointTo(tablet) {
+    padding: 25px 28px;
+    max-width: 350px;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 759px) {
+    max-width: 100%;
+  }
+}
+
+.svg__wrapper {
+  margin-bottom: 20px;
+
+  @include breakPointTo(tablet) {
+    svg {
+      width: 42px;
+      height: 42px;
+    }
+    margin-bottom: 18px;
+  }
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: -0.2px;
+  color: #344054;
+  margin-bottom: 6px;
+  max-width: 270px;
+  width: 100%;
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25px;
+  letter-spacing: -0.14px;
+  color: #999999;
+}

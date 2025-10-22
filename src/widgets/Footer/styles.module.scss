@@ -1,0 +1,109 @@
+@use "../../shared/utils/mixins" as *;
+@use "../../shared/utils/vars" as *;
+
+.footer {
+  padding: 36px 40px;
+  position: relative;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include breakPointTo(tablet) {
+    padding: 40px 20px;
+    gap: 40px;
+  }
+
+  @include breakPointTo(mobile) {
+    gap: 32px;
+  }
+
+  .svg {
+    width: 100%;
+    height: auto;
+  }
+
+  .links {
+    display: flex;
+    justify-content: space-between;
+    @include breakPointTo(mobile) {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .link_block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      .label {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 100%;
+        color: $mainGray;
+      }
+
+      .link {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 100%;
+        letter-spacing: -0.02em;
+        color: $mainBlack;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        overflow: hidden;
+        height: 22px;
+        .s1,
+        .s2 {
+          transition: 0.3s;
+        }
+        .s2 {
+          opacity: 80%;
+        }
+        &:hover {
+          .s1,
+          .s2 {
+            transform: translateY(-32px);
+          }
+        }
+      }
+    }
+  }
+
+  .policy {
+    display: flex;
+    justify-content: space-between;
+
+    @include breakPointTo(mobile) {
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .policy_link {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 100%;
+      color: $mainGray;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      overflow: hidden;
+      height: 16px;
+
+      .s1,
+      .s2 {
+        transition: 0.3s;
+      }
+      .s2 {
+        opacity: 80%;
+      }
+      &:hover {
+        .s1,
+        .s2 {
+          transform: translateY(-26px);
+        }
+      }
+    }
+  }
+}

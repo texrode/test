@@ -1,0 +1,120 @@
+@use "../../shared/utils/vars" as *;
+@use "../../shared/utils/mixins" as *;
+
+.section{
+  display: flex;
+  flex-direction: column;
+  gap: clamp(36.5px, 4.68vw, 67.5px);
+  padding: 35px;
+  border-bottom: $sideBarBorder;
+
+  @include breakPointTo(tablet){
+    padding: 18px;
+  }
+}
+
+.titleCount{
+  color: $blue;
+  margin-right: 31px;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.title{
+  color: $blackText;
+  display: flex;
+  flex-direction: row;
+  font-size: clamp(30px, 4.17vw, 60px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.6px;
+
+  @include breakPointTo(tablet){
+    flex-direction: column;
+    line-height: 1.5;
+  }
+}
+
+.team{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px 204px;
+
+  @include breakPointTo(tablet){
+    gap: 27px 39px;
+  }
+}
+
+.personImg{
+  border-radius: 39px;
+  overflow: hidden;
+  object-fit: cover;
+  width: clamp(52px, 5.48vw, 79px);
+  height: clamp(52px, 5.48vw, 79px);
+}
+
+.person{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+.name, .role{
+  color: $blackText;
+  font-size: clamp(11px, 1.04vw, 15px);
+  letter-spacing: -0.3px;
+  line-height: 1.5;
+}
+
+.role{
+  color: $grayText;
+}
+
+.stack{
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  margin-bottom: clamp(18px, 2.64vw, 38px);
+
+}
+
+.stackTitle{ 
+  color: $grayText;
+  display: flex;
+  flex-direction: row;
+  gap: 11px;
+  font-size: clamp(20px, 1.53vw, 22px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.22px;
+}
+
+.specialText{
+  color: $blackText;
+}
+
+.stackList{
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.stackItem{
+  color: $darkBlueTitle;
+  width: max-content;
+  border: $stackBorder;
+  padding: 12px 18px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.4px;
+  border-radius: 30px;
+}

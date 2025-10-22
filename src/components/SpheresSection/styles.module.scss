@@ -1,0 +1,251 @@
+@use "../../shared/utils/vars" as *;
+@use "../../shared/utils/mixins" as *;
+
+.section {
+  padding: 40px;
+  background-color: white;
+  height: 800px;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include breakPointTo(tablet) {
+    padding: 40px 20px;
+    padding-bottom: 20px;
+    justify-content: start;
+    gap: 40px;
+    height: max-content;
+    position: relative;
+  }
+
+  @include breakPointTo(mobile) {
+    padding-bottom: 0;
+  }
+
+  .img {
+    position: absolute;
+
+    @include breakPointTo(mobile) {
+      position: relative;
+    }
+  }
+
+  .tg {
+    top: 0;
+    right: 40px;
+    @include breakPointTo(tablet) {
+      height: 450px;
+      right: 6.85px;
+      bottom: 0;
+      top: auto;
+    }
+
+    @include breakPointTo(mobile) {
+      height: auto;
+      right: auto;
+      bottom: auto;
+    }
+  }
+
+  .app {
+    top: 40px;
+    right: 80px;
+
+    @include breakPointTo(tablet) {
+      height: 705px;
+      right: 20px;
+      top: auto;
+      bottom: -255px;
+    }
+
+    @include breakPointTo(mobile) {
+      right: auto;
+      bottom: auto;
+      height: 439px;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+
+  .web {
+    bottom: 40px;
+    right: -348px;
+
+    @include breakPointTo(tablet) {
+      height: 705px;
+      bottom: -180px;
+      right: -400px;
+    }
+
+    @include breakPointTo(mobile) {
+      height: auto;
+      bottom: auto;
+      right: auto;
+      height: 280px;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+
+  .erp {
+    top: 40px;
+    right: -500px;
+
+    @include breakPointTo(tablet) {
+      top: auto;
+      bottom: 20px;
+      right: -400px;
+    }
+
+    @include breakPointTo(mobile) {
+      height: auto;
+      bottom: auto;
+      right: auto;
+    }
+  }
+
+  .out {
+    top: -500px;
+    right: -900px;
+    transform: scale(1.7);
+
+    @include breakPointTo(tablet) {
+      transform: scale(1);
+      top: auto;
+      bottom: 0;
+      right: -450px;
+    }
+
+    @include breakPointTo(mobile) {
+      height: 400px;
+      object-fit: cover;
+      bottom: auto;
+      right: auto;
+    }
+  }
+
+  .top {
+    position: relative;
+    z-index: 1;
+
+    .title {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 100%;
+      letter-spacing: -0.02em;
+      color: $blue;
+    }
+
+    .buttons_block {
+      background-color: #9e9e9e0d;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      padding: 2px;
+      border-radius: 8px;
+      width: max-content;
+      margin-top: 40px;
+      margin-bottom: 80px;
+
+      @include breakPointTo(tablet) {
+        margin: 40px 0;
+      }
+
+      @include breakPointTo(mobile) {
+        width: 100%;
+        overflow-x: auto;
+      }
+
+      .btn {
+        padding: 4px 8px;
+        border-radius: 6px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 100%;
+        color: $secondBlack;
+        transition: 0.2s ease-in-out;
+        flex-shrink: 0;
+      }
+      .active_btn {
+        background-color: #9e9e9e1a;
+      }
+    }
+
+    .main_block {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      max-width: 670px;
+
+      .title {
+        font-weight: 300;
+        font-size: 36px;
+        line-height: 120%;
+        letter-spacing: -0.02em;
+        color: $mainBlack;
+      }
+      .subtitle_block {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        .subtitle {
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 120%;
+          letter-spacing: -0.02em;
+          color: $mainGray;
+        }
+      }
+    }
+  }
+
+  .bottom_block {
+    display: flex;
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+
+    @include breakPointTo(tablet) {
+      flex-direction: column;
+    }
+
+    .info_block {
+      width: 223.3333282470703px;
+      height: 136px;
+      background-color: #9e9e9e0d;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+      border-radius: 10px;
+
+      @include breakPointTo(tablet) {
+        width: 350.57476806640625px;
+      }
+
+      @include breakPointTo(mobile) {
+        width: 100%;
+      }
+
+      .title {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 120%;
+        letter-spacing: -0.02em;
+        color: $mainBlack;
+        width: 183px;
+      }
+
+      .subtitle {
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 120%;
+        letter-spacing: -0.02em;
+        color: $mainGray;
+      }
+    }
+  }
+}
